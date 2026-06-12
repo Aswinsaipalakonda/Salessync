@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+db.sqlite3
+db_kva.sqlite3
+*.log
+
+# Node
+node_modules/
+dist/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp files
+temp_deploy/
+temp_deploy_kva/

@@ -1088,8 +1088,8 @@ def export_all_orders(request):
                 worksheet.col(col).width = default_column_width
            
             headers = [
-                "Bill No", "Customer Name", "Mobile", "Area",
-                "Product", "Amount", "Status", "Billing Date",
+                "Bill No", "Billing Date", "Customer Name", "Mobile", "Area",
+                "Product", "Amount", "Status", 
                 "Total Paid", "Balance", "Payment Date", "Paid Amount",
                 "Payment Method", "Remarks"
             ]
@@ -1121,13 +1121,13 @@ def export_all_orders(request):
                         remarks = payment.remarks or ""
 
                         worksheet.write(row_num, 0, bill_no)
-                        worksheet.write(row_num, 1, customer_name)
-                        worksheet.write(row_num, 2, mobile)
-                        worksheet.write(row_num, 3, area)
-                        worksheet.write(row_num, 4, product)
-                        worksheet.write(row_num, 5, amount)
-                        worksheet.write(row_num, 6, status)
-                        worksheet.write(row_num, 7, billing_date,date_style)  
+                        worksheet.write(row_num, 1, billing_date, date_style)  
+                        worksheet.write(row_num, 2, customer_name)
+                        worksheet.write(row_num, 3, mobile)
+                        worksheet.write(row_num, 4, area)
+                        worksheet.write(row_num, 5, product)
+                        worksheet.write(row_num, 6, amount)
+                        worksheet.write(row_num, 7, status)
                         worksheet.write(row_num, 8, total_paid)
                         worksheet.write(row_num, 9, balance)
                         worksheet.write(row_num, 10, payment_date, date_style)  
@@ -1137,13 +1137,13 @@ def export_all_orders(request):
                         row_num += 1
                 else:
                     worksheet.write(row_num, 0, bill_no)
-                    worksheet.write(row_num, 1, customer_name)
-                    worksheet.write(row_num, 2, mobile)
-                    worksheet.write(row_num, 3, area)
-                    worksheet.write(row_num, 4, product)
-                    worksheet.write(row_num, 5, amount)
-                    worksheet.write(row_num, 6, status)
-                    worksheet.write(row_num, 7, billing_date,date_style) 
+                    worksheet.write(row_num, 1, billing_date, date_style) 
+                    worksheet.write(row_num, 2, customer_name)
+                    worksheet.write(row_num, 3, mobile)
+                    worksheet.write(row_num, 4, area)
+                    worksheet.write(row_num, 5, product)
+                    worksheet.write(row_num, 6, amount)
+                    worksheet.write(row_num, 7, status)
                     worksheet.write(row_num, 8, total_paid)
                     worksheet.write(row_num, 9, balance)
 
